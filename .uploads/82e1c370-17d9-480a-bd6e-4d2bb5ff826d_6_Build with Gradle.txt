@@ -1,0 +1,37 @@
+﻿2026-06-30T23:53:10.2176261Z ##[group]Run ./gradlew build
+2026-06-30T23:53:10.2176616Z [36;1m./gradlew build[0m
+2026-06-30T23:53:10.2208236Z shell: /usr/bin/bash -e {0}
+2026-06-30T23:53:10.2208545Z env:
+2026-06-30T23:53:10.2208903Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.3-9/x64
+2026-06-30T23:53:10.2209455Z   JAVA_HOME_25_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.3-9/x64
+2026-06-30T23:53:10.2210128Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2026-06-30T23:53:10.2210489Z   GRADLE_USER_HOME: /home/runner/.gradle
+2026-06-30T23:53:10.2210852Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2026-06-30T23:53:10.2211202Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2026-06-30T23:53:10.2211687Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2026-06-30T23:53:10.2212199Z   DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
+2026-06-30T23:53:10.2212564Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2026-06-30T23:53:10.2212881Z ##[endgroup]
+2026-06-30T23:53:12.3449859Z Starting a Gradle Daemon (subsequent builds will be faster)
+2026-06-30T23:53:19.2450321Z 
+2026-06-30T23:53:19.2451458Z > Configure project :
+2026-06-30T23:53:19.2480385Z Fabric Loom: 1.17.11
+2026-06-30T23:53:19.7440177Z 
+2026-06-30T23:53:19.7441451Z gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_2-1782863596336.json
+2026-06-30T23:53:19.7470439Z FAILURE: Build failed with an exception.
+2026-06-30T23:53:19.7500178Z 
+2026-06-30T23:53:19.7513963Z * Where:
+2026-06-30T23:53:19.7515012Z Build file '/home/runner/work/just-enough-guns-neo/just-enough-guns-neo/build.gradle' line: 54
+2026-06-30T23:53:19.7515950Z 
+2026-06-30T23:53:19.7533050Z * What went wrong:
+2026-06-30T23:53:19.7533969Z A problem occurred evaluating root project 'Just-Enough-Guns-Fabric-26.1'.
+2026-06-30T23:53:19.7536115Z > Could not get unknown property 'minecraftClasspath' for configuration container for root project 'Just-Enough-Guns-Fabric-26.1' of type org.gradle.api.internal.artifacts.configurations.DefaultConfigurationContainer.
+2026-06-30T23:53:19.7538207Z 
+2026-06-30T23:53:19.7538521Z * Try:
+2026-06-30T23:53:19.7539145Z > Run with --stacktrace option to get the stack trace.
+2026-06-30T23:53:19.7540250Z > Run with --info or --debug option to get more log output.
+2026-06-30T23:53:19.7541221Z > Run with --scan to get full insights from a Build Scan (powered by Develocity).
+2026-06-30T23:53:19.7542154Z > Get more help at https://help.gradle.org.
+2026-06-30T23:53:19.7542697Z 
+2026-06-30T23:53:19.7543035Z BUILD FAILED in 9s
+2026-06-30T23:53:20.2079151Z ##[error]Process completed with exit code 1.

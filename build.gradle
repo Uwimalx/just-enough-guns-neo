@@ -49,9 +49,21 @@ tasks.withType(JavaCompile).configureEach {
     options.release = 25
 }
 
-// Fabric Loom's minecraftClasspath configuration is resolvable and includes both server and client jars
-// Adding it to main sourceSet's compile classpath to resolve client-only class references
-sourceSets.main.compileClasspath += configurations.minecraftClasspath
+loom {
+    splitEnvironmentSourceSets()
+    mods {
+        jeg {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.client
+        }
+    }
+}
+
+// Use lazy provider to add dev configuration to main classpath
+afterEvaluate {
+    // The dev configuration contains remapped Minecraft jars
+    sourceSets.main.compileClasspath = sourceSets.main.compileClasspath.plus(configurations.dev)
+}
 
 processResources {
     inputs.property "version", project.mod_version
