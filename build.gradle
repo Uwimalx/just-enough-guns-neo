@@ -19,10 +19,9 @@ repositories {
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modImplementation "maven.modrinth:geckolib:8nsYyE1C"
-    include "maven.modrinth:geckolib:8nsYyE1C"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    implementation "maven.modrinth:geckolib:8nsYyE1C"
     implementation "com.electronwill.night-config:toml:3.8.1"
     implementation "com.electronwill.night-config:core:3.8.1"
     include "com.electronwill.night-config:toml:3.8.1"
@@ -48,6 +47,16 @@ java {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
     options.release = 25
+}
+
+afterEvaluate {
+    def clientSourceSet = sourceSets.findByName('client')
+    if (clientSourceSet != null) {
+        def minecraftJars = clientSourceSet.compileClasspath.filter { File file ->
+            file.name.contains('minecraft') && file.name.endsWith('.jar')
+        }
+        compileJava.classpath += files(minecraftJars)
+    }
 }
 
 processResources {
