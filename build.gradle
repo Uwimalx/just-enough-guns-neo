@@ -49,9 +49,9 @@ tasks.withType(JavaCompile).configureEach {
     options.release = 25
 }
 
-// Fabric Loom's minecraft configuration includes both server and client jars
+// Fabric Loom's minecraftClasspath configuration is resolvable and includes both server and client jars
 // Adding it to main sourceSet's compile classpath to resolve client-only class references
-sourceSets.main.compileClasspath += configurations.minecraft
+sourceSets.main.compileClasspath += configurations.minecraftClasspath
 
 processResources {
     inputs.property "version", project.mod_version
