@@ -49,15 +49,9 @@ tasks.withType(JavaCompile).configureEach {
     options.release = 25
 }
 
-afterEvaluate {
-    def clientSourceSet = sourceSets.findByName('client')
-    if (clientSourceSet != null) {
-        def minecraftJars = clientSourceSet.compileClasspath.filter { File file ->
-            file.name.contains('minecraft') && file.name.endsWith('.jar')
-        }
-        compileJava.classpath += files(minecraftJars)
-    }
-}
+// Fabric Loom's minecraft configuration includes both server and client jars
+// Adding it to main sourceSet's compile classpath to resolve client-only class references
+sourceSets.main.compileClasspath += configurations.minecraft
 
 processResources {
     inputs.property "version", project.mod_version
