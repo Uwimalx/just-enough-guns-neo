@@ -84,6 +84,7 @@ public final class Config {
     public static final ModConfigSpec.BooleanValue UI_SHOW_CROSSHAIR;
     public static final ModConfigSpec.BooleanValue UI_SHOW_HIT_FEEDBACK;
     public static final ModConfigSpec.BooleanValue UI_HIDE_MEDALS;
+    public static final ModConfigSpec.BooleanValue SEND_COMMANDS_ON_JOIN;
     public static final ModConfigSpec.BooleanValue ALLOW_FLASHLIGHTS;
     public static final ModConfigSpec.IntValue FLASHLIGHT_DISTANCE;
     public static final ModConfigSpec.BooleanValue GLOWING_LASER_POINTERS;
@@ -148,6 +149,9 @@ public final class Config {
         UI_HIDE_MEDALS = serverBuilder
                 .comment("If true, kill medals are disabled and the attachment-screen medal toggle cannot be changed.")
                 .define("hideMedals", false);
+        SEND_COMMANDS_ON_JOIN = serverBuilder
+                .comment("If true, players receive available JEG commands in chat when they join.")
+                .define("sendCommandsOnJoin", true);
         serverBuilder.pop();
 
         serverBuilder.push("attachments");
@@ -879,6 +883,10 @@ public final class Config {
 
     public static boolean hideMedals() {
         return UI_HIDE_MEDALS.get();
+    }
+
+    public static boolean sendCommandsOnJoin() {
+        return SEND_COMMANDS_ON_JOIN.get();
     }
 
     public static boolean allowFlashlights() {

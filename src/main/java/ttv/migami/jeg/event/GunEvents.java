@@ -88,7 +88,9 @@ public final class GunEvents {
     public static void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
         if (event.getEntity() instanceof ServerPlayer serverPlayer) {
             grantStartingManual(serverPlayer);
-            sendAvailableCommands(serverPlayer);
+            if (Config.sendCommandsOnJoin()) {
+                sendAvailableCommands(serverPlayer);
+            }
             restoreVehicleSeat(serverPlayer);
         }
     }
