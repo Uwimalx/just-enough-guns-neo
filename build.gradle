@@ -49,21 +49,15 @@ tasks.withType(JavaCompile).configureEach {
     options.release = 25
 }
 
-loom {
-    splitEnvironmentSourceSets()
-    mods {
-        jeg {
-            sourceSet sourceSets.main
-            sourceSet sourceSets.client
-        }
+// Add client Minecraft jars from client sourceSet's compile classpath to main compile classpath
+// This is needed because geckolib (in main classpath) references client-only Minecraft classes
+compileJava.classpath += files(provider {
+    def clientSourceSet = sourceSets.findByName('client')
+    if (clientSourceSet == null) return []
+    return clientSourceSet.compileClasspath.files.findAll { File file ->
+        file.name.contains('minecraft') && file.name.endsWith('.jar')
     }
-}
-
-// Use lazy provider to add dev configuration to main classpath
-afterEvaluate {
-    // The dev configuration contains remapped Minecraft jars
-    sourceSets.main.compileClasspath = sourceSets.main.compileClasspath.plus(configurations.dev)
-}
+})
 
 processResources {
     inputs.property "version", project.mod_version

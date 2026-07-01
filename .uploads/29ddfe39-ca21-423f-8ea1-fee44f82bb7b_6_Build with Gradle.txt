@@ -1,0 +1,37 @@
+﻿2026-06-30T23:55:02.7895735Z ##[group]Run ./gradlew build
+2026-06-30T23:55:02.7896138Z [36;1m./gradlew build[0m
+2026-06-30T23:55:02.7925665Z shell: /usr/bin/bash -e {0}
+2026-06-30T23:55:02.7925969Z env:
+2026-06-30T23:55:02.7926321Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.3-9/x64
+2026-06-30T23:55:02.7926891Z   JAVA_HOME_25_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.3-9/x64
+2026-06-30T23:55:02.7927371Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2026-06-30T23:55:02.7927733Z   GRADLE_USER_HOME: /home/runner/.gradle
+2026-06-30T23:55:02.7928077Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2026-06-30T23:55:02.7928422Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2026-06-30T23:55:02.7928923Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2026-06-30T23:55:02.7929471Z   DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
+2026-06-30T23:55:02.7929847Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2026-06-30T23:55:02.7930151Z ##[endgroup]
+2026-06-30T23:55:04.2769485Z Starting a Gradle Daemon (subsequent builds will be faster)
+2026-06-30T23:55:10.6785561Z 
+2026-06-30T23:55:10.6795957Z > Configure project :
+2026-06-30T23:55:10.6818489Z Fabric Loom: 1.17.11
+2026-06-30T23:55:10.9794818Z 
+2026-06-30T23:55:10.9796176Z gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_2-1782863707779.json
+2026-06-30T23:55:10.9798266Z FAILURE: Build failed with an exception.
+2026-06-30T23:55:10.9802066Z 
+2026-06-30T23:55:10.9802578Z * Where:
+2026-06-30T23:55:10.9803617Z Build file '/home/runner/work/just-enough-guns-neo/just-enough-guns-neo/build.gradle' line: 53
+2026-06-30T23:55:10.9804654Z 
+2026-06-30T23:55:10.9805316Z * What went wrong:
+2026-06-30T23:55:10.9806285Z A problem occurred evaluating root project 'Just-Enough-Guns-Fabric-26.1'.
+2026-06-30T23:55:10.9807816Z > The value for extension 'loom' property 'minecraftJarConfiguration' is final and cannot be changed any further.
+2026-06-30T23:55:10.9809383Z 
+2026-06-30T23:55:10.9809784Z * Try:
+2026-06-30T23:55:10.9810594Z > Run with --stacktrace option to get the stack trace.
+2026-06-30T23:55:10.9811639Z > Run with --info or --debug option to get more log output.
+2026-06-30T23:55:10.9812773Z > Run with --scan to get full insights from a Build Scan (powered by Develocity).
+2026-06-30T23:55:10.9813938Z > Get more help at https://help.gradle.org.
+2026-06-30T23:55:10.9814644Z 
+2026-06-30T23:55:10.9815324Z BUILD FAILED in 8s
+2026-06-30T23:55:11.3833339Z ##[error]Process completed with exit code 1.
